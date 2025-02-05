@@ -11,11 +11,15 @@ class AppInit {
     S : number[],
   ) : Promise<number> {
 
-    let i;
+    // let i;
     let result = 0;
 
-    for (i = 1; i <= n; i++) {
-      result += S[i];
+    // for (i = 1; i <= n; i++) {
+    //   result += S[i];
+    // }
+
+    for (const number of S) {
+      result += number;
     }
 
     return result;
