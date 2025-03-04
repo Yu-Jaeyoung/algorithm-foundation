@@ -25,10 +25,6 @@ class AppInit {
       .map(() => Array(n + 1)
         .fill(0));
 
-    for (let i = 1; i <= n; i++) {
-      M[i][i] = 0;
-    }
-
     for (let diagonal = 1; diagonal <= n - 1; diagonal++) {
       for (let i = 1; i <= n - diagonal; i++) {
         const j = i + diagonal;
