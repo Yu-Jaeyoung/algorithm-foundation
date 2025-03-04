@@ -9,6 +9,12 @@ class AppInit {
       [3, Infinity, Infinity, Infinity, 0],
     ];
 
+    // const W : number[][] = [
+    //   [0, 1, 5],
+    //   [Infinity, 0, 3],
+    //   [3, Infinity, 0],
+    // ];
+
     const D : number[][] = W.map(row => [...row]);
 
     this.floyd(n, W, D);
@@ -31,6 +37,14 @@ class AppInit {
           D[i][j] = Math.min(D[i][j], D[i][k] + D[k][j]);
         }
       }
+
+      // k가 의미하는 바가 무엇인가 ?
+      // k는 이번에 업데이트할 때, 지나는 vertax를 의미한다.
+      // 그래서 1번째 업데이트 k = 0인 경우, 이전 W랑 비교했을 때 W[0][] 부분의 값에 변화가 없다..
+      // 이어지는 업데이트 에서 k = 1인 경우, 이전 W랑 비교했을 때 W[1][] 부분의 값에 변화가 없음
+
+      console.log(`${k} 번째 동작 : `);
+      console.info(D);
     }
   }
 
